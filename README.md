@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
 ![Estructuras de Datos](https://img.shields.io/badge/Estructuras_de_Datos-Listas_Enlazadas-green)
-![Universidad](https://img.shields.io/badge/Universidad-San_Alberto_Hurtado-red)
+![Universidad](https://principal.url.edu.gt)
 
 Bienvenido al **Sistema de Gestión de Flota de Vehículos**, un proyecto desarrollado como parte del curso de **Estructuras de Datos I** en la **Universidad San Alberto Hurtado, S.J.** Este proyecto tiene como objetivo administrar y mantener un registro de una flota de vehículos, utilizando listas enlazadas para gestionar el historial de mantenimientos de cada vehículo.
 
