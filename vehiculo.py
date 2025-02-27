@@ -2,7 +2,6 @@ from Proyecto_1_Estructura_De_Datos_1.mantenimiento import Mantenimiento
 from lista import List
 import re
 
-
 class Vehiculo:
     def __init__(self, placa, marca, modelo, anio, kilometraje):
         self.placa = placa
@@ -14,12 +13,10 @@ class Vehiculo:
 
     @property
     def anio(self):
-        """devuelve el año del vehículo"""
         return self._anio
 
     @anio.setter
     def anio(self, valor):
-        """Validación del año del vehículo para que este en un rango requerido"""
         if not isinstance(valor, int) or valor < 1900 or valor > 2025:
             raise ValueError("El año del vehículo debe estar entre 1900 y 2025")
         self._anio = valor
@@ -30,20 +27,29 @@ class Vehiculo:
 
     @placa.setter
     def placa(self, valor):
-        formato_placa=r"^[PMC]\d{3}[A-Z]{3}$"
-        if not re.match(formato_placa, valor):
+        formato_placa = r"^[PMC]\d{3}[A-Z]{3}$"
+        valor_mayusculas = valor.upper()
+
+        if not re.match(formato_placa, valor_mayusculas):
             raise ValueError("Formato de placa inválido. Debe ser P, M o C seguido de 3 dígitos y 3 letras.")
-        self._placa = valor
+
+        self._placa = valor_mayusculas
 
     @property
-    def kilometraje(self, valor):
+    def kilometraje(self):
         return self._kilometraje
 
     @kilometraje.setter
     def kilometraje(self, valor):
-        if not isinstance(valor, int) or valor < 0:
-            raise ValueError("El kilometraje debe ser un número mayor a cero")
-        self._kilometraje = valor
+        try:
+            valor_entero = int(valor)
+        except ValueError:
+            raise ValueError("El kilometraje debe ser un número entero o una cadena que se pueda convertir a entero.")
+
+        if valor_entero < 0:
+            raise ValueError("El kilometraje debe ser un número mayor o igual a cero.")
+
+        self._kilometraje = valor_entero
 
     def agregar_mantenimiento(self, fecha, descripcion, costo):
         mantenimiento = Mantenimiento(fecha, descripcion, costo)
@@ -72,10 +78,6 @@ class Vehiculo:
         else:
             print("Historial de mantenimientos:")
             self.historial_mantenimientos.show()
-            # actual = self.historial_mantenimiento.head
-            #while actual:
-            #    print(f"Fecha: {actual.value.fecha}, Descripición: {actual.value.descripcion}, Costo: Q{actual.value.costo}")
-            #    actual = actual.next
 
     def costo_total_mantenimientos(self):
         total = 0
@@ -85,9 +87,5 @@ class Vehiculo:
             actual = actual.next
         return total
 
-
-
-
-
-
-
+    def __str__(self):
+        return f"{self.marca} {self.modelo}, Año: {self.anio}, Kilometraje: {self.kilometraje}, Placa: {self.placa}"

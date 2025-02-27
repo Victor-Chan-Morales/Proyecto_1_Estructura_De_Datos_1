@@ -1,5 +1,4 @@
-class Node[K, V]:
-    def __init__(self, key: K, value: V | None = None):
-        self.key: K = key
-        self.value: V | None = value
-        self.next: Node | None = None
+class Node[T]:
+    def __init__(self, value: T):
+        self.value: T = value
+        self.next: Node[T] | None = None

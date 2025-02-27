@@ -2,7 +2,9 @@ from flota_vehiculos import FlotaVehiculos
 
 def main():
     flota = FlotaVehiculos()
-
+    flota.registrar_vehiculo("P123ABC", "Toyota", "Corolla", 2015, 75000)
+    flota.registrar_vehiculo("M456DEF", "Honda", "Civic", 2018, 50000)
+    flota.registrar_vehiculo("C789GHI", "Ford", "Focus", 2020, 30000)
     while True:
         print("\n--- Menú de Gestión de Flota de Vehículos ---")
         print("1. Registrar un vehículo")
@@ -23,9 +25,9 @@ def main():
                 placa = input("Placa: ")
                 marca = input("Marca: ")
                 modelo = input("Modelo: ")
-                año = int(input("Año: "))
+                anio = int(input("Año: "))
                 kilometraje = float(input("Kilometraje: "))
-                flota.registrar_vehiculo(placa, marca, modelo, año, kilometraje)
+                flota.registrar_vehiculo(placa, marca, modelo, anio, kilometraje)
                 print("Vehículo registrado exitosamente.")
 
             elif opcion == "2":
@@ -38,7 +40,7 @@ def main():
                 print("\nBuscar un vehículo:")
                 placa = input("Placa del vehículo a buscar: ")
                 vehiculo = flota.buscar_vehiculo(placa)
-                print(f"Vehículo encontrado: {vehiculo.marca} {vehiculo.modelo}, Año: {vehiculo.año}, Kilometraje: {vehiculo.kilometraje}")
+                print(f"Vehículo encontrado: {vehiculo.marca} {vehiculo.modelo}, Año: {vehiculo.anio}, Kilometraje: {vehiculo.kilometraje}")
 
             elif opcion == "4":
                 print("\nListar todos los vehículos:")

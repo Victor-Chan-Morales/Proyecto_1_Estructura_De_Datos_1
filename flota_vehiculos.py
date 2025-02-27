@@ -1,13 +1,13 @@
 from vehiculo import Vehiculo
-from lista import  List
+from lista import List
 
 class FlotaVehiculos:
     def __init__(self):
-        self.vehiculos = List()  # Usamos tu lista enlazada
+        self.vehiculos = List()
 
-    def registrar_vehiculo(self, placa, marca, modelo, año, kilometraje):
-        nuevo_vehiculo = Vehiculo(placa, marca, modelo, año, kilometraje)
-        self.vehiculos.append(nuevo_vehiculo)  # Usamos append de tu lista
+    def registrar_vehiculo(self, placa, marca, modelo, anio, kilometraje):
+        nuevo_vehiculo = Vehiculo(placa, marca, modelo, anio, kilometraje)
+        self.vehiculos.append(nuevo_vehiculo)
 
     def eliminar_vehiculo(self, placa):
         actual = self.vehiculos.head
@@ -27,9 +27,13 @@ class FlotaVehiculos:
         raise ValueError("Vehículo no encontrado.")
 
     def buscar_vehiculo(self, placa):
+        if self.vehiculos.head is None:
+            raise ValueError("No hay vehículos registrados.")
+        placa = placa.upper().strip()
         actual = self.vehiculos.head
         while actual:
-            if actual.value.placa == placa:
+            placa_actual = actual.value.placa.upper().strip()
+            if placa_actual == placa:
                 return actual.value
             actual = actual.next
         raise ValueError("Vehículo no encontrado.")
