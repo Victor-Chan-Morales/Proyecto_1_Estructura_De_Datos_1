@@ -1,10 +1,10 @@
 # 🚗 Sistema de Gestión de Flota de Vehículos 🛠️
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)
 ![Estructuras de Datos](https://img.shields.io/badge/Estructuras_de_Datos-Listas_Enlazadas-green)
-![Universidad](https://principal.url.edu.gt)
+![Universidad](https://img.shields.io/badge/Universidad_Rafael_Landívar-red)
 
-Bienvenido al **Sistema de Gestión de Flota de Vehículos**, un proyecto desarrollado como parte del curso de **Estructuras de Datos I** en la **Universidad San Alberto Hurtado, S.J.** Este proyecto tiene como objetivo administrar y mantener un registro de una flota de vehículos, utilizando listas enlazadas para gestionar el historial de mantenimientos de cada vehículo.
+Bienvenido al **Sistema de Gestión de Flota de Vehículos**, un proyecto desarrollado como parte del curso de **Estructuras de Datos I** en la **Universidad Rafael Landívar, Campus Quetzaltenango** Este proyecto tiene como objetivo administrar y mantener un registro de una flota de vehículos, utilizando listas enlazadas para gestionar el historial de mantenimientos de cada vehículo.
 
 ---
 
@@ -23,7 +23,7 @@ El sistema utiliza **listas enlazadas** para organizar los datos de manera diná
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Python 3.x**: Lenguaje de programación principal.
+- **Python 3.13**: Lenguaje de programación principal.
 - **Listas Enlazadas**: Estructura de datos utilizada para gestionar vehículos y mantenimientos.
 - **Programación Orientada a Objetos (POO)**: Encapsulamiento, getters, setters y relaciones entre clases.
 - **Manejo de Errores**: Validación de entradas y manejo de excepciones.
@@ -34,7 +34,7 @@ El sistema utiliza **listas enlazadas** para organizar los datos de manera diná
 
 ### Requisitos Previos
 
-- Python 3.x instalado en tu sistema.
+- Python 3.13 instalado en tu sistema.
 - Conocimientos básicos de Python y estructuras de datos.
 
 ### Instrucciones de Uso
