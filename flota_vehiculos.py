@@ -10,6 +10,7 @@ class FlotaVehiculos:
         self.vehiculos.append(nuevo_vehiculo)
 
     def eliminar_vehiculo(self, placa):
+        placa = placa.upper().strip()
         actual = self.vehiculos.head
         prev = None
         while actual:
